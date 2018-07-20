@@ -1,0 +1,17 @@
+[Unit]
+Description=Moves teh sensor shit from serial to local MQTT
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=home-automation
+WorkingDirectory=/var/serial2mqtt
+ExecStart=/usr/bin/python3 /var/serial2mqtt/main.py
+Restart=on-failure
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=serial2mqtt:
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+{
+  "delay": 30,
+  "scan": true,
+  "ttyName": "ttyACM",
+  "timeout": 60,
+  "retryCount": 20,
+  "mqtt": {
+    "host": "localhost",
+    "port": 1883
+  }
+}
