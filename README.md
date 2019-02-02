@@ -19,3 +19,9 @@ Example: `{"Temperature": 24.00, "Humidity": 81.20, "Heat Index": 24.58}`
 
 There is an example serial2mqtt.service file you can copy to `/etc/systemd/system/` (after changing the paths) and run `sudo systemctl enable serial2mqtt` to have this service continuously run for you!
 
+It also runs on Docker. You could create a config.json file and run:
+
+```
+docker build -t serial2mqtt .
+docker run --device=/dev/ttyACM0 serial2mqtt    # add "--restart always" to continuously restart
+```
